@@ -17,15 +17,31 @@ const SetDetails = () => {
   const [additionalCharge, setAdditionalCharge] = useState(0);
   const [pickUpCost, setPickupCost] = useState(0);
   const [image, setImage] = useState('')
+  const [quantity, setQuantity] = useState(1)
 
   const costDistance = location?.state?.distanceCost
   const destination = location?.state?.destination
   const totalCost = costDistance + additionalCharge + pickUpCost
-  const shippingBody = { email: user?.email, parcelName: parcelName, distanceCost: costDistance, parcelType: type, pickUpCost: pickUpCost, floorCost: additionalCharge, totalCost: totalCost, destination: destination, image: image.image }
+  const shippingBody = {
+    email: user?.email,
+    parcelName: parcelName,
+    distanceCost: costDistance * quantity,
+    parcelType: type,
+    pickUpCost: pickUpCost * quantity,
+    floorCost: additionalCharge * quantity,
+    totalCost: totalCost * quantity,
+    destination: destination,
+    image: image.image,
+    quantity: quantity
+  }
 
   const getName = (e) => {
     setParcelName(e.target.value)
   }
+  const getQuantity = (e) => {
+    setQuantity(e.target.value)
+  }
+  console.log(quantity);
 
   const handleSelect = (e) => {
     setType(e.target.value);
@@ -33,26 +49,30 @@ const SetDetails = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (parcelName && pickUpCost && image) {
+    if (parcelName && pickUpCost && image && quantity > 0) {
       navigate('/payment', {
         state: {
           shippings: shippingBody
         },
       });
     } else {
-      if(!parcelName){
+      if (!parcelName) {
         toast.error('Please Provide Parcel Name');
         return
       }
-      else if(!pickUpCost){
+      else if (!pickUpCost) {
         toast.error('Please Select Your Parcel Delivery Date');
         return
       }
-      else if(!image){
+      else if (!image) {
         toast.error('Select Your Parcel Image');
         return
       }
-      
+      else if (!quantity < 1) {
+        toast.error('Give a positive quantity');
+        return
+      }
+
     }
   }
 
@@ -65,7 +85,7 @@ const SetDetails = () => {
         <p className='text-center text-4xl font-semibold text-orange-600 my-6'>Provide Your Your Parcel Details</p>
       </Marquee>
       <div className="md:flex md:mx-12 mx-2 my-6 gap-3">
-        <div className="border rounded-md p-2 md:p-5 md:w-2/3 bg-slate-200 mb-3">
+        <div className="border rounded-md p-2 md:p-5 md:w-2/3 bg-slate-100 mb-3">
           <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-5 pb-5">
             <div>
               <label className="font-semibold" htmlFor="">Parcel Name</label>
@@ -84,9 +104,10 @@ const SetDetails = () => {
               </select>
             </div>
             <div>
-              
+              <label className="font-semibold" htmlFor="">Parcel Quantity</label>
+              <input onChange={getQuantity} className="input-design mt-2" type="number" defaultValue={1} id="" />
             </div>
-            <input className='continue-button cursor-pointer' type="submit" value="Go To Payment" />
+            <input className='continue-button mt-8 cursor-pointer' type="submit" value="Go To Payment" />
           </form>
           <PickDate setPickupCost={setPickupCost}></PickDate>
         </div>
@@ -95,10 +116,10 @@ const SetDetails = () => {
           <h1>Parcel Name: {parcelName}</h1>
           <h1>Parcel Destination: {destination}</h1>
           <h1>Parcel type: {type}</h1>
-          <h2>Cost For Distance: {costDistance} &#2547;</h2>
-          <h2>Pickup Cost: {pickUpCost} &#2547;</h2>
-          <h2>Height Cost: {additionalCharge} &#2547;</h2>
-          <h1>Total Cost: {totalCost} &#2547;</h1>
+          <h2>Cost For Distance: {costDistance * quantity} &#2547;</h2>
+          <h2>Pickup Cost: {pickUpCost * quantity} &#2547;</h2>
+          <h2>Height Cost: {additionalCharge * quantity} &#2547;</h2>
+          <h1>Total Cost: {totalCost * quantity} &#2547;</h1>
         </div>
       </div>
     </div>

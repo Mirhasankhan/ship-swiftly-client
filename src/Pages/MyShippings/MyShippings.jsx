@@ -28,6 +28,7 @@ const MyShippings = () => {
                             <th>Name</th>
                             <th>Destination</th>
                             <th>Parcel Type</th>
+                            <th>Parcel Quantity</th>
                             <th>Floor Cost</th>
                             <th>Picking Cost</th>
                             <th>Distance Cost</th>

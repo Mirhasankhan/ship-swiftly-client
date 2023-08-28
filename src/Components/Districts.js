@@ -53,7 +53,7 @@ const districts = [
   },
   {
     "district": "Dhaka",
-    "actualDistanceFromDhaka": 0
+    "actualDistanceFromDhaka": 5
   },
   {
     "district": "Dinajpur",

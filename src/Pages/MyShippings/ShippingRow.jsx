@@ -1,6 +1,6 @@
 
 const ShippingRow = ({ ship }) => {
-    const {ParcelName, destination, image, distanceCost, floorCost, parcelType, pickUpCost, totalCost} = ship;
+    const {ParcelName,quantity, destination, image, distanceCost, floorCost, parcelType, pickUpCost, totalCost} = ship;
     return (
         <tr>
             <th>
@@ -9,6 +9,7 @@ const ShippingRow = ({ ship }) => {
             <td>{ParcelName}</td>
             <td>{destination}</td>
             <td>{parcelType}</td>
+            <td>{quantity}</td>
             <td>{floorCost}  &#2547;</td>
             <td>{pickUpCost}  &#2547;</td>
             <td>{distanceCost}  &#2547;</td>

@@ -6,7 +6,7 @@ import { toast } from "react-hot-toast";
 import { Link } from "react-router-dom";
 
 const CheckOutForm = ({ uploadShipping }) => {
-    const { destination, distanceCost, floorCost, parcelName, parcelType, pickUpCost, totalCost, image } = uploadShipping
+    const { quantity,destination, distanceCost, floorCost, parcelName, parcelType, pickUpCost, totalCost, image } = uploadShipping
     const { user } = useAuth()
     const stripe = useStripe()
     const elements = useElements()
@@ -85,6 +85,7 @@ const CheckOutForm = ({ uploadShipping }) => {
                 paymentStatus: 'Successfull',
                 parcelType,
                 ParcelName: parcelName,
+                quantity:quantity
             }
             fetch('https://ship-swiftly-server.vercel.app/shippings', {
                 method: 'POST',

@@ -55,7 +55,7 @@ function DistanceCosts() {
                 <p className='text-center text-xl md:text-3xl font-semibold my-4 md:my-8 text-orange-600'>Provide Your Destination & Parcel Weight For Shipping</p>
             </Marquee>
             <div className='md:flex md:w-4/5 md:mx-auto mx-3 my-6'>                
-                <form onSubmit={handleSubmit} className='bg-slate-200 rounded-lg w-full p-2 md:p-5 grid grid-cols-2 gap-4'>
+                <form onSubmit={handleSubmit} className='bg-slate-100 rounded-lg w-full p-2 md:p-5 grid grid-cols-2 gap-4'>
                     
                     <div>
                         <label htmlFor="" className=' text-xl'>From*</label>
