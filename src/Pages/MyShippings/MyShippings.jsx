@@ -14,7 +14,8 @@ const MyShippings = () => {
     console.log(currentUser);
     return (
         <div>
-            <div className="overflow-x-auto">
+            {
+                currentUser.length > 0 ? <div className="overflow-x-auto">
                 <table className="table table-zebra">
                     {/* head */}
                     <thead>
@@ -36,7 +37,8 @@ const MyShippings = () => {
                        }
                     </tbody>
                 </table>
-            </div>
+            </div> : <p className="text-center mt-16 text-4xl font-semibold">No Shipping Found</p>
+            }
         </div>
     );
 };

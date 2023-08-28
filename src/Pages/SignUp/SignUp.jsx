@@ -1,16 +1,13 @@
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import toast, { Toaster } from 'react-hot-toast';
 import SocialLogin from '../../Components/SocialLogin';
 import useAuth from "../../Hooks/useAuth";
 
-// const token = import.meta.env.VITE_IMAGE_UPLOAD_TOKEN
-
-const SignUp = () => {
-    // const image_hosting_URL = `https://api.imgbb.com/1/upload?key=${token}`
+const SignUp = () => {   
     const { createUser, updateUserProfile } = useAuth()
-
+    const navigate = useNavigate()
     const { register, handleSubmit, reset, watch, formState: { errors } } = useForm();
     const onSubmit = data => {
         const pass = (watch("password"));
@@ -40,6 +37,7 @@ const SignUp = () => {
                                 .then(data => {
                                     if (data.insertedId) {
                                         reset()
+                                        navigate('/')
                                         toast.success('user created successfully', {
                                             position: 'top-right',
                                             style: { backgroundColor: 'blue', color: 'white' }

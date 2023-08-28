@@ -50,8 +50,8 @@ function DistanceCosts() {
             <Marquee>
                 <p className='text-center text-2xl text-orange-600'>Provide Your Destination & Parcel Weight For Shipping</p>
             </Marquee>
-            <div className='flex w-4/5 mx-auto my-6'>
-                <form onSubmit={handleSubmit} className='bg-slate-400 rounded-lg w-full p-5 grid grid-cols-2 gap-4'>
+            <div className='md:flex md:w-4/5 md:mx-auto mx-3 my-6'>
+                <form onSubmit={handleSubmit} className='bg-slate-400 rounded-lg w-full p-2 md:p-5 grid grid-cols-2 gap-4'>
                     <div>
                         <label htmlFor="" className='font-medium text-xl'>From*</label>
                         <input className='input-design my-2 block' readOnly type="text" defaultValue='Dhaka' />
@@ -74,7 +74,7 @@ function DistanceCosts() {
                     </div>
                     <input className='continue-button cursor-pointer mt-8' type="submit" value="Continue" />
                 </form>
-                <div className='w-96 rounded-md border-2 p-5 ml-2 bg-sky-400 text-white'>
+                <div className='md:w-96 w-full rounded-md border-2 p-5 md:ml-2 bg-sky-400 text-white'>
                     <h1 className='text-center underline font-bold text-2xl my-5'>Distance & Cost</h1>
                     <h1 className='text-xl font-medium'>From: <span className='text-black'>Dhaka</span></h1>
                     <h1 className='py-2 text-xl font-medium'>To: <span className='text-black'>{searchTerm}</span></h1>

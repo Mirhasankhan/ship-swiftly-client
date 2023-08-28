@@ -7,6 +7,7 @@ import Login from "../Pages/Login/Login";
 import Payment from "../Pages/Home/Payment";
 import MyShippings from "../Pages/MyShippings/MyShippings";
 import AboutUs from "../Pages/AboutUS/AboutUs";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/setDetails',
-                element: <SetDetails/>
+                element: <PrivateRoute><SetDetails/></PrivateRoute>
             },            
             {
                 path: 'myShippings',
