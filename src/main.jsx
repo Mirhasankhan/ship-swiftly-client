@@ -9,7 +9,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import axios from 'axios'
 import AuthProvider from './Providers/AuthProvider'
 
-axios.defaults.baseURL = 'http://localhost:5000'
+axios.defaults.baseURL = 'https://ship-swiftly-server.vercel.app'
 
 const queryClient = new QueryClient()
 

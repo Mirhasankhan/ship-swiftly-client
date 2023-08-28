@@ -26,9 +26,9 @@ const UploadImage = ({ setImage }) => {
     }
 
     return (
-        <div className='w-full flex justify-between items-center mx-6'>           
+        <div className='w-full'>           
             <input ref={imageRef} name='image' type="file"/>
-            <button onClick={uploadPhoto} className='continue-button mt-3 cursor-pointer'>Submit</button>
+            <button onClick={uploadPhoto} className='thin-button mt-3 cursor-pointer'>Upload Image</button>
         </div>
     );
 };

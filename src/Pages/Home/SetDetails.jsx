@@ -60,8 +60,8 @@ const SetDetails = () => {
       <Marquee>
         <p className='text-center text-2xl text-orange-600 my-4'>Provide Your Your Parcel Details</p>
       </Marquee>
-      <div className="flex mx-12 my-6">
-        <div className="border rounded-md p-5 w-2/3 bg-slate-200">
+      <div className="md:flex md:mx-12 mx-2 my-6 gap-3">
+        <div className="border rounded-md p-1 md:p-5 md:w-2/3 bg-slate-200">
           <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-5 pb-5">
             <div>
               <label className="font-semibold" htmlFor="">Parcel Name</label>
@@ -83,7 +83,7 @@ const SetDetails = () => {
           </form>
           <PickDate setPickupCost={setPickupCost}></PickDate>
         </div>
-        <div className="p-5 border-2 ml-2 text-white bg-orange-400">
+        <div className="p-5 border-2 ml-2 text-white bg-orange-400 sm:mt-2">
           <h1 className="text-center">Shipping Details</h1>
           <h1>Parcel Name: {parcelName}</h1>
           <h1>Parcel Destination: {destination}</h1>

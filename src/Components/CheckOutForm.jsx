@@ -2,9 +2,11 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useEffect } from "react";
 import { useState } from "react";
 import useAuth from "../Hooks/useAuth";
+import { toast } from "react-hot-toast";
+import { Link } from "react-router-dom";
 
 const CheckOutForm = ({ uploadShipping }) => {
-    const { destination, distanceCost, floorCost, parcelName, parcelType, pickUpCost, totalCost,image } = uploadShipping
+    const { destination, distanceCost, floorCost, parcelName, parcelType, pickUpCost, totalCost, image } = uploadShipping
     const { user } = useAuth()
     const stripe = useStripe()
     const elements = useElements()
@@ -25,7 +27,7 @@ const CheckOutForm = ({ uploadShipping }) => {
             .then(data => {
                 setClientSecret(data.clientSecret)
             })
-            .catch(error =>{
+            .catch(error => {
                 console.log(error);
             })
 
@@ -59,16 +61,16 @@ const CheckOutForm = ({ uploadShipping }) => {
                     card: card,
                     billing_details: {
                         email: user?.email || 'No Email',
-                        name: user?.displayName || 'No Name'                        
+                        name: user?.displayName || 'No Name'
                     },
                 },
             },
         )
 
         if (payError) {
-            console.log(payError);
+            toast.error(payError);
         }
-        setProcessing(false)       
+        setProcessing(false)
         if (paymentIntent.status === "succeeded") {
             setTId(paymentIntent.id)
             const shippingPayment = {
@@ -84,7 +86,7 @@ const CheckOutForm = ({ uploadShipping }) => {
                 parcelType,
                 ParcelName: parcelName,
             }
-            fetch('http://localhost:5000/shippings', {
+            fetch('https://ship-swiftly-server.vercel.app/shippings', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -93,14 +95,14 @@ const CheckOutForm = ({ uploadShipping }) => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
+                    toast.success('Shipping Confirmed')
                 })
         }
 
     }
     return (
         <div>
-            <form className="w-1/2" onSubmit={handleSubmit}>
+            <form className="w-full" onSubmit={handleSubmit}>
                 <CardElement
                     options={{
                         style: {
@@ -117,12 +119,19 @@ const CheckOutForm = ({ uploadShipping }) => {
                         },
                     }}
                 />
-                <button disabled={!stripe || !clientSecret || processing} className="btn btn-success mt-4" type="submit">
+                <button disabled={!stripe || !clientSecret || processing} className="continue-button mt-4" type="submit">
                     Confirm Payment
                 </button>
+                
             </form>
+            <Link to="/"><button className="thin-button mt-3">Back Home</button></Link>
             {cardError && <p className="text-red-600 pt-6">{cardError}</p>}
-            {tId && <p>Transaction completed</p>}
+            {tId &&
+                <div>
+                    <p className="text-green-500 text-2xl font-semibold pt-3">Transaction completed</p>
+                    <Link to="/myShippings"><button className="thin-button">Go To My Shippings</button></Link>
+                </div>
+            }
         </div>
     );
 };

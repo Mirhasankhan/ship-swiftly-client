@@ -20,11 +20,7 @@ const router = createBrowserRouter([
             {
                 path: '/setDetails',
                 element: <SetDetails/>
-            },
-            {
-                path: '/payment',
-                element: <Payment/>
-            },
+            },            
             {
                 path: 'myShippings',
                 element: <MyShippings/>
@@ -43,6 +39,10 @@ const router = createBrowserRouter([
     {
         path: '/login',
         element: <Login/>
+    },
+    {
+        path: '/payment',
+        element: <Payment/>
     }
 ])
 

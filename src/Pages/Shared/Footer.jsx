@@ -171,9 +171,9 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <hr className="mt-16 mb-10 border-gray-200" />
+                <hr className="mt-8 mb-6 border-gray-200" />
                 <p className="text-sm text-center text-gray-600 py-3">
-                    © Copyright 2023, All Rights Reserved by ToyEmporium
+                    © Copyright 2023, All Rights Reserved by ShipSwiftly
                 </p>
             </div>
         </div>

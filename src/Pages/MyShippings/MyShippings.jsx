@@ -7,7 +7,7 @@ const MyShippings = () => {
     const { data: currentUser = [] } = useQuery({
         queryKey: ['users', user?.email],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/shippings?email=${user?.email}`)
+            const res = await fetch(`https://ship-swiftly-server.vercel.app/shippings?email=${user?.email}`)
             return res.json()
         }
     })
