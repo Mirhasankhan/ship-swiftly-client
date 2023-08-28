@@ -5,6 +5,8 @@ import SetDetails from "../Pages/Home/setDetails";
 import SignUp from "../Pages/SignUp/SignUp";
 import Login from "../Pages/Login/Login";
 import Payment from "../Pages/Home/Payment";
+import MyShippings from "../Pages/MyShippings/MyShippings";
+import AboutUs from "../Pages/AboutUS/AboutUs";
 
 const router = createBrowserRouter([
     {
@@ -22,6 +24,14 @@ const router = createBrowserRouter([
             {
                 path: '/payment',
                 element: <Payment/>
+            },
+            {
+                path: 'myShippings',
+                element: <MyShippings/>
+            },
+            {
+                path: '/aboutUs',
+                element: <AboutUs/>
             }
            
         ]

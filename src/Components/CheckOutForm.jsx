@@ -4,7 +4,7 @@ import { useState } from "react";
 import useAuth from "../Hooks/useAuth";
 
 const CheckOutForm = ({ uploadShipping }) => {
-    const { destination, distanceCost, floorCost, parcelName, parcelType, pickUpCost, totalCost } = uploadShipping
+    const { destination, distanceCost, floorCost, parcelName, parcelType, pickUpCost, totalCost,image } = uploadShipping
     const { user } = useAuth()
     const stripe = useStripe()
     const elements = useElements()
@@ -14,7 +14,7 @@ const CheckOutForm = ({ uploadShipping }) => {
     const [tId, setTId] = useState('')
 
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://ship-swiftly-server.vercel.app/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -78,6 +78,7 @@ const CheckOutForm = ({ uploadShipping }) => {
                 floorCost,
                 destination,
                 distanceCost,
+                image,
                 pickUpCost,
                 paymentStatus: 'Successfull',
                 parcelType,
@@ -117,7 +118,7 @@ const CheckOutForm = ({ uploadShipping }) => {
                     }}
                 />
                 <button disabled={!stripe || !clientSecret || processing} className="btn btn-success mt-4" type="submit">
-                    Pay
+                    Confirm Payment
                 </button>
             </form>
             {cardError && <p className="text-red-600 pt-6">{cardError}</p>}

@@ -1,11 +1,12 @@
 import { Helmet } from "react-helmet-async";
-import District from "./District";
+import DistanceCosts from "./DistanceCosts";
+
 
 const Home = () => {
     return (
         <div>
             <Helmet title="Home | ShipSwiftly"></Helmet>
-           <District/>
+            <DistanceCosts />
         </div>
     );
 };
