@@ -14,6 +14,7 @@ const UploadImage = ({ setImage }) => {
             body: formData
         })
             .then(res => res.json()).then(imageData => {
+                toast.success('Image Uploaded')
                 const upload = { image: imageData.data.display_url }
                 setImage(upload)
             })

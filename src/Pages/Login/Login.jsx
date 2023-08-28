@@ -5,6 +5,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import SocialLogin from '../../Components/SocialLogin';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import useAuth from '../../Hooks/useAuth';
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
     const { signIn, resetPassword } = useAuth()
@@ -57,6 +58,9 @@ const Login = () => {
     }
     return (
         <div className='py-10'>
+            <Helmet>
+                <title>Login | ShipSwiftly</title>
+            </Helmet>
             <div className='md:w-1/3 mx-3 md:mx-auto bg-white rounded-lg p-3 border-2'>
                 <h1 className='font-semibold text-2xl text-center'>Login To Ship<span className='text-sky-400'>Swiftly</span></h1>
                 <form onSubmit={handleSubmit(onSubmit)} className="card-body">

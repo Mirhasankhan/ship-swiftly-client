@@ -4,8 +4,9 @@ import Swal from 'sweetalert2';
 import toast, { Toaster } from 'react-hot-toast';
 import SocialLogin from '../../Components/SocialLogin';
 import useAuth from "../../Hooks/useAuth";
+import { Helmet } from "react-helmet-async";
 
-const SignUp = () => {   
+const SignUp = () => {
     const { createUser, updateUserProfile } = useAuth()
     const navigate = useNavigate()
     const { register, handleSubmit, reset, watch, formState: { errors } } = useForm();
@@ -56,8 +57,11 @@ const SignUp = () => {
     };
 
     return (
-        <div className='py-10 bg-gray-500'>
-            <div className='md:w-2/5 w-2/3 mx-auto bg-white rounded-lg p-3'>
+        <div className='py-10'>
+            <Helmet>
+                <title>Sign Up | ShipSwiftly</title>
+            </Helmet>
+            <div className='md:w-2/5 w-2/3 mx-auto bg-white border-2 rounded-lg p-3'>
                 <h1 className='font-semibold text-2xl text-center'>Create your Ship<span className='text-sky-400'>Swiftly</span> Account</h1>
                 <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                     <div className="form-control">
@@ -101,7 +105,7 @@ const SignUp = () => {
                         </label>
                         <input {...register("photo", { required: true })} type="url" placeholder="upload photo url" className="input-design" />
                         {errors.photo && <span className="text-red-600">Photo is required</span>}
-                        
+
                     </div>
                     <div className="form-control mt-6">
                         <input className="continue-button cursor-pointer" type="submit" value="Sign Up" />

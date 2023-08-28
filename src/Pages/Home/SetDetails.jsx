@@ -58,7 +58,7 @@ const SetDetails = () => {
   return (
     <div>
       <Marquee>
-        <p className='text-center text-2xl text-orange-600 my-4'>Provide Your Your Parcel Details</p>
+        <p className='text-center text-4xl font-semibold text-orange-600 my-6'>Provide Your Your Parcel Details</p>
       </Marquee>
       <div className="md:flex md:mx-12 mx-2 my-6 gap-3">
         <div className="border rounded-md p-2 md:p-5 md:w-2/3 bg-slate-200 mb-3">
@@ -79,19 +79,22 @@ const SetDetails = () => {
                 <option value="Steel">Steel</option>
               </select>
             </div>
+            <div>
+              
+            </div>
             <input className='continue-button cursor-pointer' type="submit" value="Go To Payment" />
           </form>
           <PickDate setPickupCost={setPickupCost}></PickDate>
         </div>
-        <div className="p-2 md:p-5 border-2 text-white bg-orange-400 mb-3">
+        <div className="p-2 md:p-5 border-2 text-white bg-orange-400 mb-3 rounded-md">
           <h1 className='text-center underline font-bold text-2xl my-5'>Shipping Details</h1>
           <h1>Parcel Name: {parcelName}</h1>
           <h1>Parcel Destination: {destination}</h1>
           <h1>Parcel type: {type}</h1>
-          <h2>Cost For Distance: {costDistance}</h2>
-          <h2>Pickup Cost: {pickUpCost}</h2>
-          <h2>Height Cost: {additionalCharge}</h2>
-          <h1>Total Cost: {totalCost}</h1>
+          <h2>Cost For Distance: {costDistance} &#2547;</h2>
+          <h2>Pickup Cost: {pickUpCost} &#2547;</h2>
+          <h2>Height Cost: {additionalCharge} &#2547;</h2>
+          <h1>Total Cost: {totalCost} &#2547;</h1>
         </div>
       </div>
     </div>

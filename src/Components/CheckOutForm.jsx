@@ -124,6 +124,7 @@ const CheckOutForm = ({ uploadShipping }) => {
                 </button>
                 
             </form>
+            <div className="flex justify-between items-center">
             <Link to="/"><button className="thin-button mt-3">Back Home</button></Link>
             {cardError && <p className="text-red-600 pt-6">{cardError}</p>}
             {tId &&
@@ -132,6 +133,7 @@ const CheckOutForm = ({ uploadShipping }) => {
                     <Link to="/myShippings"><button className="thin-button">Go To My Shippings</button></Link>
                 </div>
             }
+            </div>
         </div>
     );
 };

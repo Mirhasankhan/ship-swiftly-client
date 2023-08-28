@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import useAuth from "../../Hooks/useAuth";
 import ShippingRow from "./ShippingRow";
+import { Helmet } from "react-helmet-async";
 
 const MyShippings = () => {
     const { user } = useAuth()
@@ -14,11 +15,14 @@ const MyShippings = () => {
     console.log(currentUser);
     return (
         <div>
+            <Helmet>
+                <title>My Shippings | ShipSwiftly</title>
+            </Helmet>
             {
                 currentUser.length > 0 ? <div className="overflow-x-auto">
-                <table className="table table-zebra">
-                    {/* head */}
-                    <thead>
+                <h1 className="text-center font-semibold my-6 text-4xl pb-4 border-b-2 border-purple-600 w-1/2 mx-auto ">My Shippings</h1>
+                <table className="table table-zebra">                    
+                    <thead className="bg-sky-400 text-black font-semibold">
                         <tr>
                             <th>Parcel Image</th>
                             <th>Name</th>
@@ -30,8 +34,7 @@ const MyShippings = () => {
                             <th>Total Cost</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        {/* row 1 */}
+                    <tbody>                        
                        {
                         currentUser.map(ship => <ShippingRow key={ship._id} ship={ship}></ShippingRow>)
                        }

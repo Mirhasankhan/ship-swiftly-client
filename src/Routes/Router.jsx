@@ -8,11 +8,13 @@ import Payment from "../Pages/Home/Payment";
 import MyShippings from "../Pages/MyShippings/MyShippings";
 import AboutUs from "../Pages/AboutUS/AboutUs";
 import PrivateRoute from "./PrivateRoute";
+import ErrorRoute from "./ErrorRoute";
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <MainLayout/>,
+        errorElement: <ErrorRoute/>,
         children: [
             {
                 path: '/',

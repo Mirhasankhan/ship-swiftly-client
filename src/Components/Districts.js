@@ -169,8 +169,88 @@ const districts = [
   },
   {
     "district": "Narayanganj",
-    "actualDistance": 150
-  }
+    "actualDistanceFromDhaka": 20.00
+  },
+  {
+    "district": "Narsingdi",
+    "actualDistanceFromDhaka": 59.11
+  },
+  {
+    "district": "Netrokona",
+    "actualDistanceFromDhaka": 175.32
+  },
+  {
+    "district": "Nilphamari",
+    "actualDistanceFromDhaka": 332.45
+  },
+  {
+    "district": "Noakhali",
+    "actualDistanceFromDhaka": 149.38
+  },
+  {
+    "district": "Pabna",
+    "actualDistanceFromDhaka": 183.96
+  },
+  {
+    "district": "Panchagarh",
+    "actualDistanceFromDhaka": 380.88
+  },
+  {
+    "district": "Patuakhali",
+    "actualDistanceFromDhaka": 149.73
+  },
+  {
+    "district": "Pirojpur",
+    "actualDistanceFromDhaka": 141.29
+  },
+  {
+    "district": "Rajbari",
+    "actualDistanceFromDhaka": 66.81
+  },
+  {
+    "district": "Rajshahi",
+    "actualDistanceFromDhaka": 245.47
+  },
+  {
+    "district": "Rangamati",
+    "actualDistanceFromDhaka": 276.91
+  },
+  {
+    "district": "Rangpur",
+    "actualDistanceFromDhaka": 322.91
+  },
+  {
+    "district": "Satkhira",
+    "actualDistanceFromDhaka": 158.13
+  },
+  {
+    "district": "Shariatpur",
+    "actualDistanceFromDhaka": 84.74
+  },
+  {
+    "district": "Sherpur",
+    "actualDistanceFromDhaka": 166.62
+  },
+  {
+    "district": "Sirajganj",
+    "actualDistanceFromDhaka": 127.34
+  },
+  {
+    "district": "Sunamganj",
+    "actualDistanceFromDhaka": 211.69
+  },
+  {
+    "district": "Sylhet",
+    "actualDistanceFromDhaka": 242.96
+  },
+  {
+    "district": "Tangail",
+    "actualDistanceFromDhaka": 102.77
+  },
+  {
+    "district": "Thakurgaon",
+    "actualDistanceFromDhaka": 373.28
+  } 
 ]
 
 export default districts

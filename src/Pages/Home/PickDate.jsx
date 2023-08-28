@@ -15,6 +15,7 @@ const PickDate = ({ setPickupCost }) => {
             const differenceInDays = Math.floor(
                 (endDate - startDate) / (24 * 60 * 60 * 1000)
             );
+            toast.success('Date Confirmed')
             setPickup(differenceInDays)
 
         } else {
@@ -23,9 +24,9 @@ const PickDate = ({ setPickupCost }) => {
                 style: { backgroundColor: 'black', color: 'white', fontWeight: 'semibold' }
             })
         }
+        console.log(pickup);
 
         const priorityCost = calculatePriorityCost(pickup)
-
         setPickupCost(priorityCost);
     };
 
@@ -47,11 +48,12 @@ const PickDate = ({ setPickupCost }) => {
                         onChange={(date) => setStartDate(date)}
                         customInput={customInput}
                         readOnly
+                        className='border-2 p-1 mb-4 rounded-md'
                     />
                     <br />
                     <label htmlFor="">Delivery Date: </label>
                     <DatePicker
-                        className='border-2 p-1 mb-4'
+                        className='border-2 p-1 mb-4 rounded-md'
                         selected={endDate}
                         onChange={(date) => setEndDate(date)}
                         selectsEnd
@@ -61,13 +63,13 @@ const PickDate = ({ setPickupCost }) => {
                         placeholderText="Select end date"
                     />
                     <br />
-                    <button className='continue-button' onClick={calculateDateDifference}>Confirm Picking Date</button>
+                    <h1 className='bg-sky-500 w-1/2 text-xl p-2 rounded-md text-white text-center cursor-pointer' onClick={calculateDateDifference}>Confirm Picking Date</h1>
                     <div className="modal-action">                       
                         <button className="btn bg-red-500">Close</button>
                     </div>
                 </form>
             </dialog>
-            <button className="btn" onClick={() => window.my_modal_1.showModal()}>Select Delivery Date</button>
+            <button className="control-button" onClick={() => window.my_modal_1.showModal()}>Select Delivery Date</button>
         </div>
     );
 };

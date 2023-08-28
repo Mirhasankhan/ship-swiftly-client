@@ -11,7 +11,7 @@ const Payment = () => {
     const uploadShipping = location?.state?.shippings
 
     return (
-        <div className='p-4 w-full md:w-1/2 mx-auto mt-4 border-2 rounded-md'>
+        <div className='p-4 w-full md:w-1/2 mx-auto mt-24 border-2 rounded-md'>
             <div className='w-1/2 mx-auto my-8 border-b-2 pb-3 text-center '>
                 <h1 className='animate__animated animate__backInRight  font-medium text-2xl md:text-3xl text-purple-600 '>Proceed Your Payment</h1>
                 
