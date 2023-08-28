@@ -23,8 +23,7 @@ const PickDate = ({ setPickupCost }) => {
                 position: 'top-right',
                 style: { backgroundColor: 'black', color: 'white', fontWeight: 'semibold' }
             })
-        }
-        console.log(pickup);
+        }      
 
         const priorityCost = calculatePriorityCost(pickup)
         setPickupCost(priorityCost);

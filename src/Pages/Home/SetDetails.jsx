@@ -6,6 +6,7 @@ import { toast } from "react-hot-toast";
 import UploadImage from "./UploadImage";
 import useAuth from "../../Hooks/useAuth";
 import Marquee from "react-fast-marquee";
+import { Helmet } from "react-helmet-async";
 
 const SetDetails = () => {
   const { user } = useAuth()
@@ -57,6 +58,9 @@ const SetDetails = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>SetDetails | ShipSwiftly</title>
+      </Helmet>
       <Marquee>
         <p className='text-center text-4xl font-semibold text-orange-600 my-6'>Provide Your Your Parcel Details</p>
       </Marquee>
@@ -86,7 +90,7 @@ const SetDetails = () => {
           </form>
           <PickDate setPickupCost={setPickupCost}></PickDate>
         </div>
-        <div className="p-2 md:p-5 border-2 text-white bg-orange-400 mb-3 rounded-md">
+        <div className="p-2 text-xl md:p-5 w-96 border-2 text-white bg-orange-400 mb-3 rounded-md">
           <h1 className='text-center underline font-bold text-2xl my-5'>Shipping Details</h1>
           <h1>Parcel Name: {parcelName}</h1>
           <h1>Parcel Destination: {destination}</h1>

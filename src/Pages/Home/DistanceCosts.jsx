@@ -50,12 +50,13 @@ function DistanceCosts() {
 
     return (
         <div>
-            <h1 className='text-center text-4xl text-sky-600 py-8 font-bold'>Hi, Welcome To ShipSwhiftly</h1>
+            <h1 className='text-center text-2xl md:text-4xl text-sky-600 py-8 font-bold'>Hi, Welcome To ShipSwhiftly</h1>
             <Marquee>
-                <p className='text-center text-3xl font-semibold my-8 text-orange-600'>Provide Your Destination & Parcel Weight For Shipping</p>
+                <p className='text-center text-xl md:text-3xl font-semibold my-4 md:my-8 text-orange-600'>Provide Your Destination & Parcel Weight For Shipping</p>
             </Marquee>
-            <div className='md:flex md:w-4/5 md:mx-auto mx-3 my-6'>
+            <div className='md:flex md:w-4/5 md:mx-auto mx-3 my-6'>                
                 <form onSubmit={handleSubmit} className='bg-slate-200 rounded-lg w-full p-2 md:p-5 grid grid-cols-2 gap-4'>
+                    
                     <div>
                         <label htmlFor="" className=' text-xl'>From*</label>
                         <input className='input-design my-2 block' readOnly type="text" defaultValue='Dhaka' />
@@ -78,7 +79,7 @@ function DistanceCosts() {
                     </div>
                     <input className='continue-button cursor-pointer mt-8' type="submit" value="Continue" />
                 </form>
-                <div className='md:w-96 w-full rounded-md border-2 p-3 md:ml-2 bg-orange-400 text-white'>
+                <div className='md:w-96 w-full rounded-md border-2 p-3 md:ml-4 bg-orange-400 text-white'>
                     <h1 className='text-center underline font-bold text-2xl my-3'>Distance & Cost</h1>
                     <h1 className='text-xl'>From: <span className=''>Dhaka</span></h1>
                     <h1 className='py-1 text-xl '>To: <span className=''>{searchTerm}</span></h1>

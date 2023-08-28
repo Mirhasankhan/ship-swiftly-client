@@ -12,15 +12,15 @@ const MyShippings = () => {
             return res.json()
         }
     })
-    console.log(currentUser);
+   
     return (
-        <div>
+        <div className="mb-4">
             <Helmet>
                 <title>My Shippings | ShipSwiftly</title>
             </Helmet>
             {
                 currentUser.length > 0 ? <div className="overflow-x-auto">
-                <h1 className="text-center font-semibold my-6 text-4xl pb-4 border-b-2 border-purple-600 w-1/2 mx-auto ">My Shippings</h1>
+                <h1 className="text-center font-semibold my-6 text-2xl md:text-4xl pb-4 border-b-2 border-purple-600 w-1/2 mx-auto ">My Shippings</h1>
                 <table className="table table-zebra">                    
                     <thead className="bg-sky-400 text-black font-semibold">
                         <tr>
