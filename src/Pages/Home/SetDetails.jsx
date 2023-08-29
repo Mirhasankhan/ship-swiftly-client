@@ -7,6 +7,7 @@ import UploadImage from "./UploadImage";
 import useAuth from "../../Hooks/useAuth";
 import Marquee from "react-fast-marquee";
 import { Helmet } from "react-helmet-async";
+import PickUpDate from "./PickUpDate";
 
 const SetDetails = () => {
   const { user } = useAuth()
@@ -41,11 +42,11 @@ const SetDetails = () => {
   const getQuantity = (e) => {
     setQuantity(e.target.value)
   }
-  console.log(quantity);
 
   const handleSelect = (e) => {
     setType(e.target.value);
   }
+  console.log(pickUpCost);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -109,7 +110,8 @@ const SetDetails = () => {
             </div>
             <input className='continue-button mt-8 cursor-pointer' type="submit" value="Go To Payment" />
           </form>
-          <PickDate setPickupCost={setPickupCost}></PickDate>
+          <PickUpDate setPickupCost={setPickupCost}></PickUpDate>
+          {/* <PickDate setPickupCost={setPickupCost}></PickDate> */}
         </div>
         <div className="p-2 text-xl md:p-5 w-96 border-2 text-white bg-orange-400 mb-3 rounded-md">
           <h1 className='text-center underline font-bold text-2xl my-5'>Shipping Details</h1>
